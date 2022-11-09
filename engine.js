@@ -2,10 +2,7 @@ const express = require('express');
 const { Server } = require("socket.io");
 const app = express();
 const http = require('https');
-// const { resolveSoa } = require('dns');
-const server = http.createServer(app, (req, res) => {
-  res.end("Conexión establecida.");
-});
+const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
       origin: ["https://beta.jobbi.mx/*", "https://beta.jobbi.mx:*", "*.beta.jobbi.mx:*", "https://beta.jobbi.mx", "https://beta.jobbi.mx/inicio.php", "https://jobbi.mx" , "*"],
@@ -13,6 +10,8 @@ const io = new Server(server, {
       credentials: true,
     }
 });
+
+app.get('/', (req, res) => res.send("Servicios levantados. Version 1.0.0.0.2"));
 var server_port = 443;
 
 io.on('connection', (socket) => { 
