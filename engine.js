@@ -5,8 +5,8 @@ const http = require('https');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-      origin: '*',
-      // methods: ["GET", "POST"],
+      origin: ["https://beta.jobbi.mx/*", "https://beta.jobbi.mx:*", "*.beta.jobbi.mx:*"],
+      methods: ["GET", "POST"],
         //origin: ["http://localhost", "http://localhost:8080", "http://127.0.0.1", "http://127.0.0.1:8080"],
     }
 });
