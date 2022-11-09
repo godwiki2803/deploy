@@ -30,12 +30,12 @@ io.on('connection', (socket) => {
   });
 
   socket.on('app_msg', (msg) => {
-    // console.log("----------- MENSAJE -----------");
-    // console.log(msg.ns);
-    // console.log(msg.user);
-    // console.log(msg.content);
-    // console.log(msg.file);
-    // console.log("-------------------------------");
+     console.log("----------- MENSAJE -----------");
+     console.log(msg.ns);
+     console.log(msg.user);
+     console.log(msg.content);
+     console.log(msg.file);
+     console.log("-------------------------------");
     io.emit('app_msg', msg);
   });
 });
