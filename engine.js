@@ -1,7 +1,7 @@
 const express = require('express');
 const { Server } = require("socket.io");
 const app = express();
-const http = require('http');
+const http = require('https');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
@@ -10,7 +10,7 @@ const io = new Server(server, {
         credentials: true
     }
 });
-var server_port = 80;
+var server_port = 8080;
 
 
 app.get('/', (req, res) => res.send("Servicios levantados. Version 1.0.0.0.2"));
