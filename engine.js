@@ -5,7 +5,7 @@ const http = require('https');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-      origin: ["https://beta.jobbi.mx/*", "https://beta.jobbi.mx:*", "*.beta.jobbi.mx:*", "https://beta.jobbi.mx"],
+      origin: ["https://beta.jobbi.mx/*", "https://beta.jobbi.mx:*", "*.beta.jobbi.mx:*", "https://beta.jobbi.mx", "https://beta.jobbi.mx/inicio.php"],
         //origin: ["http://localhost", "http://localhost:8080", "http://127.0.0.1", "http://127.0.0.1:8080"],
       credentials: true,
     }
