@@ -1,18 +1,19 @@
 const express = require('express');
 const { Server } = require("socket.io");
 const app = express();
-const http = require('https');
+const http = require('http');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-      origin: ["https://beta.jobbi.mx/*", "https://beta.jobbi.mx:*", "*.beta.jobbi.mx:*", "https://beta.jobbi.mx", "https://beta.jobbi.mx/inicio.php", "https://jobbi.mx" , "*"],
+        origin: ["http://jobbi.mx", "https://jobbi.mx", "http://beta.jobbi.mx", "https://beta.jobbi.mx"],
         //origin: ["http://localhost", "http://localhost:8080", "http://127.0.0.1", "http://127.0.0.1:8080"],
-      credentials: true,
+        credentials: true
     }
 });
+var server_port = 80;
+
 
 app.get('/', (req, res) => res.send("Servicios levantados. Version 1.0.0.0.2"));
-var server_port = 443;
 
 io.on('connection', (socket) => { 
   console.log("Un usuario a ingresado a la plataforma.");
