@@ -2,10 +2,13 @@ const express = require('express');
 const { Server } = require("socket.io");
 const app = express();
 const http = require('https');
-const server = http.createServer(app);
+// const { resolveSoa } = require('dns');
+const server = http.createServer(app, (req, res) => {
+  res.end("Conexión establecida.");
+});
 const io = new Server(server, {
     cors: {
-      origin: ["https://beta.jobbi.mx/*", "https://beta.jobbi.mx:*", "*.beta.jobbi.mx:*", "https://beta.jobbi.mx", "https://beta.jobbi.mx/inicio.php"],
+      origin: ["https://beta.jobbi.mx/*", "https://beta.jobbi.mx:*", "*.beta.jobbi.mx:*", "https://beta.jobbi.mx", "https://beta.jobbi.mx/inicio.php", "https://jobbi.mx" , "*"],
         //origin: ["http://localhost", "http://localhost:8080", "http://127.0.0.1", "http://127.0.0.1:8080"],
       credentials: true,
     }
