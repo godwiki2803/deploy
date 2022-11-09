@@ -8,7 +8,6 @@ const io = new Server(server, {
       origin: '*',
       methods: ["GET", "POST"],
         //origin: ["http://localhost", "http://localhost:8080", "http://127.0.0.1", "http://127.0.0.1:8080"],
-        credentials: true
     }
 });
 var server_port = 443;
